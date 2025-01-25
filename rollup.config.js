@@ -1,5 +1,10 @@
 import typescript from "rollup-plugin-typescript2";
-import pkg from "./package.json";
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+const pkg = JSON.parse(
+  require('fs').readFileSync(new URL('./package.json', import.meta.url))
+);
 
 const config = {
   input: "./index.ts",

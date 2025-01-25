@@ -1,7 +1,8 @@
 {
-  "name": "@livepeer/design-system",
-  "version": "1.1.0",
+  "name": "@jjasonn.stone/design-system",
+  "version": "2.0.0",
   "license": "MIT",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -14,7 +15,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "ds:build": "rollup -c",
+    "ds:build": "NODE_OPTIONS='--experimental-json-modules' rollup -c rollup.config.js",
     "ds:release": "yarn ds:build && np"
   },
   "peerDependencies": {
@@ -76,7 +77,7 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "next": "^15.1.6",
-    "np": "^7.6.2",
+    "np": "^10.1.0",
     "react": "^19.0.0",
     "react-bezier-curve-editor": "^1.1.2",
     "react-dom": "^19.0.0",
@@ -86,7 +87,8 @@
     "typescript": "5.7.3"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "resolutions": {
     "@stitches/react": "^1.2.8"
