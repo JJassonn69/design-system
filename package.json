@@ -18,8 +18,8 @@
     "ds:release": "yarn ds:build && np"
   },
   "peerDependencies": {
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "dependencies": {
     "@radix-ui/colors": "3.0.0",
@@ -77,9 +77,9 @@
     "lint-staged": "^13.0.3",
     "next": "^15.1.6",
     "np": "^7.6.2",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "react-bezier-curve-editor": "^1.1.2",
-    "react-dom": "^18.2.0",
+    "react-dom": "^19.0.0",
     "rollup": "^4.32.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.32.1",
