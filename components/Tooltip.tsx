@@ -5,8 +5,10 @@ import { Box } from "./Box";
 import { Text } from "./Text";
 
 type TooltipPrimitiveProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
-type TooltipProps = TooltipPrimitiveProps &
-  React.ComponentProps<typeof TooltipPrimitive.Content> & {
+type TooltipContentProps = React.ComponentProps<typeof TooltipPrimitive.Content>;
+
+type TooltipProps = TooltipPrimitiveProps & 
+  Omit<TooltipContentProps, 'content'> & {
     children: React.ReactElement;
     content: React.ReactNode;
     multiline?: boolean;
@@ -27,7 +29,10 @@ const StyledContent = styled(TooltipPrimitive.Content, {
   },
 });
 
-export function Tooltip({
+export const Tooltip = React.forwardRef<
+  React.ElementRef<typeof StyledContent>,
+  TooltipProps
+>(({
   children,
   content,
   open,
@@ -37,7 +42,7 @@ export function Tooltip({
   disableHoverableContent,
   multiline,
   ...props
-}: TooltipProps) {
+}, forwardedRef) => {
   const rootProps = {
     open,
     defaultOpen,
@@ -45,11 +50,13 @@ export function Tooltip({
     delayDuration,
     disableHoverableContent,
   };
+  
   return (
     <TooltipPrimitive.Root {...rootProps}>
       <TooltipPrimitive.Trigger asChild>{children}</TooltipPrimitive.Trigger>
       <TooltipPrimitive.Portal>
         <StyledContent
+          ref={forwardedRef}
           side="top"
           align="center"
           sideOffset={5}
@@ -61,20 +68,25 @@ export function Tooltip({
             as="p"
             css={{
               color: "$loContrast",
-              lineHeight: multiline ? "20px" : (undefined as any),
+              lineHeight: multiline ? "20px" : undefined,
             }}
           >
             {content}
           </Text>
           <Box css={{ color: "$transparentExtreme" }}>
             <TooltipPrimitive.Arrow
+              offset={5}
               width={11}
               height={5}
-              style={{ fill: "currentColor" }}
+              style={{
+                fill: "currentColor",
+              }}
             />
           </Box>
         </StyledContent>
       </TooltipPrimitive.Portal>
     </TooltipPrimitive.Root>
   );
-}
+});
+
+Tooltip.displayName = 'Tooltip';

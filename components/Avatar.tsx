@@ -292,7 +292,10 @@ export const Avatar = React.forwardRef<
               mb: "-3px",
             }}
           >
-            <Status size={size && size > 2 ? "2" : "1"} variant={status} />
+            <Status 
+              size={typeof size === 'number' && size > 2 ? "2" : "1"} 
+              variant={status} 
+            />
           </Box>
         )}
       </Box>
