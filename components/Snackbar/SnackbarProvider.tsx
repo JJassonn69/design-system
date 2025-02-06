@@ -1,13 +1,9 @@
 import { Box } from "../Box";
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
-import { CSSTransitionProps } from "react-transition-group/CSSTransition";
 import transitionStyles from "./transitionStyles";
 
-// type coercion for bad typing in lib
-const CSSTransitionTyped =
-  CSSTransition as unknown as React.FC<CSSTransitionProps>;
-
+// removed type coercion since it was causing issue with react 19
 // Snackbar default values
 export const defaultPosition = "bottom-center";
 export const defaultDuration = 5000;
@@ -41,6 +37,7 @@ type Props = {
 
 export const SnackbarProvider = ({ children }: Props) => {
   // Current open state
+  const snackbarRef = useRef(null);
   const [open, setOpen] = useState(false);
   // Current timeout ID
   const [timeoutId, setTimeoutId] = useState(null);
@@ -101,7 +98,7 @@ export const SnackbarProvider = ({ children }: Props) => {
 
       {/* Renders Snackbar on the end of the page */}
       <Box css={transitionStyles}>
-        <CSSTransitionTyped
+        <CSSTransition
           in={open}
           timeout={150}
           mountOnEnter
@@ -114,6 +111,7 @@ export const SnackbarProvider = ({ children }: Props) => {
             setTimeoutId(setTimeout(() => setOpen(false), duration));
           }}
           // Sets custom classNames based on "position"
+          nodeRef={snackbarRef}
           className={`snackbar-wrapper-${position}`}
           classNames={{
             enter: `snackbar-enter snackbar-enter-${position}`,
@@ -221,7 +219,7 @@ export const SnackbarProvider = ({ children }: Props) => {
               </Box>
             </Box>
           </Box>
-        </CSSTransitionTyped>
+        </CSSTransition>
       </Box>
     </SnackbarContext.Provider>
   );
