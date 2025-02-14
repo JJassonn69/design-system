@@ -1,5 +1,6 @@
 import { useSnackbar } from "../components/Snackbar";
 import { Button } from "../";
+import React from "react";
 
 export default function Snackbar() {
   const [openSnackbar] = useSnackbar();

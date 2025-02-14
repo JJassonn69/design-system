@@ -4,6 +4,7 @@ import { Flex } from "../";
 import { Grid } from "../";
 import { Heading } from "../";
 import { Kbd } from "../";
+import React from "react";
 
 export function Kbds() {
   return (

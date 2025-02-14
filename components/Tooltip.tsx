@@ -7,6 +7,11 @@ import { Text } from "./Text";
 type TooltipPrimitiveProps = React.ComponentProps<typeof TooltipPrimitive.Root>;
 type TooltipContentProps = React.ComponentProps<typeof TooltipPrimitive.Content>;
 
+/**
+ * Combines Root props with Content props while explicitly handling the 'content' prop.
+ * Using Omit prevents type conflicts by removing the original 'content' prop from TooltipContentProps
+ * before adding our custom content type. This ensures type safety and maintainability.
+ */
 type TooltipProps = TooltipPrimitiveProps & 
   Omit<TooltipContentProps, 'content'> & {
     children: React.ReactElement;
@@ -75,12 +80,9 @@ export const Tooltip = React.forwardRef<
           </Text>
           <Box css={{ color: "$transparentExtreme" }}>
             <TooltipPrimitive.Arrow
-              offset={5}
               width={11}
               height={5}
-              style={{
-                fill: "currentColor",
-              }}
+              style={{ fill: "currentColor" }}
             />
           </Box>
         </StyledContent>

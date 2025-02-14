@@ -1,6 +1,6 @@
 {
-  "name": "@jjasonn.stone/design-system",
-  "version": "2.0.0",
+  "name": "@livepeer/design-system",
+  "version": "1.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -14,8 +14,11 @@
     "start": "next start",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 0",
-    "ds:build": "NODE_OPTIONS='--experimental-json-modules' rollup -c rollup.config.js",
-    "ds:release": "yarn ds:build && np"
+    "clean": "rimraf dist",
+    "ds:build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "ds:watch": "rollup --config rollup.config.ts --configPlugin typescript --watch",
+    "ds:build:prod": "NODE_ENV=production yarn clean && yarn ds:build",
+    "ds:release": "yarn ds:build:prod && np"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -80,6 +83,7 @@
     "react": "^19.0.0",
     "react-bezier-curve-editor": "^1.1.2",
     "react-dom": "^19.0.0",
+    "rimraf": "^4.4.0",
     "rollup": "^4.32.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.32.1",

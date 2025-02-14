@@ -8,6 +8,7 @@ import { Status } from "../";
 import { Heading } from "../";
 import { Link2Icon } from "@radix-ui/react-icons";
 import { Popover, PopoverTrigger, PopoverContent, PopoverClose } from "../";
+import React from "react";
 
 export function Avatars() {
   return (

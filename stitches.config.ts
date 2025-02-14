@@ -1,4 +1,4 @@
-import { createStitches, VariantProps } from "@stitches/react";
+import { createStitches } from "@stitches/react";
 import type * as Stitches from "@stitches/react";
 
 import {
@@ -602,4 +602,4 @@ export const getThemes = () => {
 
 export type CSS = Stitches.CSS<typeof config>;
 export { styled, css, theme, createTheme, getCssText, globalCss, keyframes, config, reset };
-export type { VariantProps };
+export type { VariantProps } from "@stitches/react";
