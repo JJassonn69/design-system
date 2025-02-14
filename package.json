@@ -2,7 +2,6 @@
   "name": "@jjasonn.stone/design-system",
   "version": "2.0.0",
   "license": "MIT",
-  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
