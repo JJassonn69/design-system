@@ -69,7 +69,7 @@ type TabsListPrimitiveProps = React.ComponentProps<typeof TabsPrimitive.List>;
 type TabsListProps = TabsListPrimitiveProps & { css?: CSS };
 
 const TabsListBase = React.forwardRef<
-  React.ElementRef<typeof StyledTabsListBase>,
+  React.ComponentRef<typeof StyledTabsListBase>,
   TabsListProps
 >((props, forwardedRef) => (
   <>

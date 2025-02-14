@@ -15,7 +15,7 @@ type ParagraphProps = React.ComponentProps<typeof DEFAULT_TAG> &
   ParagraphVariants & { css?: CSS; as?: any };
 
 export const Paragraph = React.forwardRef<
-  React.ElementRef<typeof DEFAULT_TAG>,
+  React.ComponentRef<typeof DEFAULT_TAG>,
   ParagraphProps
 >((props, forwardedRef) => {
   // '2' here is the default Paragraph size variant

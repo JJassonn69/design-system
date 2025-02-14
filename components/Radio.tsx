@@ -90,7 +90,7 @@ type RadioGroupItemPrimitiveProps = React.ComponentProps<
 type RadioProps = RadioGroupItemPrimitiveProps & RadioVariants & { css?: CSS };
 
 export const Radio = React.forwardRef<
-  React.ElementRef<typeof StyledRadio>,
+  React.ComponentRef<typeof StyledRadio>,
   RadioProps
 >((props, forwardedRef) => (
   <StyledRadio {...props} ref={forwardedRef}>

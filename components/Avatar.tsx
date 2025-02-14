@@ -254,7 +254,7 @@ type AvatarOwnProps = AvatarPrimitiveProps &
   };
 
 export const Avatar = React.forwardRef<
-  React.ElementRef<typeof StyledAvatar>,
+  React.ComponentRef<typeof StyledAvatar>,
   AvatarOwnProps
 >(
   (
@@ -293,9 +293,7 @@ export const Avatar = React.forwardRef<
             }}
           >
             <Status 
-              size={typeof size === 'number' && size > 2 ? "2" : "1"} 
-              variant={status} 
-            />
+              size={typeof size === "number" && size > 2 ? "2" : "1"} variant={status} />
           </Box>
         )}
       </Box>

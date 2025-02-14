@@ -43,7 +43,7 @@ type DropdownMenuContentProps = DropdownMenuContentPrimitiveProps & {
 };
 
 const DropdownMenuContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
+  React.ComponentRef<typeof StyledContent>,
   DropdownMenuContentProps
 >((props, forwardedRef) => (
   <DropdownMenuPrimitive.Portal>
@@ -73,7 +73,7 @@ type DialogMenuCheckboxItemProps = DialogMenuCheckboxItemPrimitiveProps & {
 };
 
 const DropdownMenuCheckboxItemBase = React.forwardRef<
-  React.ElementRef<typeof StyledDropdownMenuCheckboxItem>,
+  React.ComponentRef<typeof StyledDropdownMenuCheckboxItem>,
   DialogMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuCheckboxItem {...props} ref={forwardedRef}>
@@ -102,7 +102,7 @@ type DialogMenuRadioItemProps = DialogMenuRadioItemPrimitiveProps & {
 };
 
 const DropdownMenuRadioItemBase = React.forwardRef<
-  React.ElementRef<typeof StyledDropdownMenuRadioItem>,
+  React.ComponentRef<typeof StyledDropdownMenuRadioItem>,
   DialogMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledDropdownMenuRadioItem {...props} ref={forwardedRef}>

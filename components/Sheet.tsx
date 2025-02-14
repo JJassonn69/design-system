@@ -114,7 +114,7 @@ type SheetContentProps = DialogContentPrimitiveProps &
   SheetContentVariants & { css?: CSS };
 
 const SheetContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
+  React.ComponentRef<typeof StyledContent>,
   SheetContentProps
 >(({ children, ...props }, forwardedRef) => (
   <DialogPrimitive.Portal>

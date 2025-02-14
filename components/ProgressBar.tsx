@@ -82,7 +82,7 @@ type ProgressBarProps = ProgressBarPrimitiveProps &
   ProgressBarVariants & { css?: CSS };
 
 export const ProgressBar = React.forwardRef<
-  React.ElementRef<typeof StyledProgressBar>,
+  React.ComponentRef<typeof StyledProgressBar>,
   ProgressBarProps
 >(({ value, max = 100, ...props }, forwardedRef) => {
   const percentage = value != null ? Math.round((value / max) * 100) : null;

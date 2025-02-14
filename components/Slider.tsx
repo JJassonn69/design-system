@@ -91,7 +91,7 @@ type SliderPrimitiveProps = React.ComponentProps<typeof SliderPrimitive.Root>;
 type SliderProps = SliderPrimitiveProps & { css?: CSS };
 
 export const Slider = React.forwardRef<
-  React.ElementRef<typeof StyledSlider>,
+  React.ComponentRef<typeof StyledSlider>,
   SliderProps
 >((props, forwardedRef) => {
   const hasRange = Array.isArray(props.defaultValue || (props as any).value);

@@ -22,7 +22,7 @@ type ContextMenuContentPrimitiveProps = React.ComponentProps<
 type ContextMenuContentProps = ContextMenuContentPrimitiveProps & { css?: CSS };
 
 const ContextMenuContent = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
+  React.ComponentRef<typeof StyledContent>,
   ContextMenuContentProps
 >((props, forwardedRef) => (
   <ContextMenuPrimitive.Portal>
@@ -53,7 +53,7 @@ type ContextMenuCheckboxItemProps = ContextMenuCheckboxItemPrimitiveProps & {
 };
 
 const ContextMenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof StyledContextMenuCheckboxItem>,
+  React.ComponentRef<typeof StyledContextMenuCheckboxItem>,
   ContextMenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContextMenuCheckboxItem {...props} ref={forwardedRef}>
@@ -82,7 +82,7 @@ type ContextMenuRadioItemProps = ContextMenuRadioItemPrimitiveProps & {
 };
 
 const ContextMenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof StyledContextMenuRadioItem>,
+  React.ComponentRef<typeof StyledContextMenuRadioItem>,
   ContextMenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledContextMenuRadioItem {...props} ref={forwardedRef}>

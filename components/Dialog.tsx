@@ -118,7 +118,7 @@ type DialogContentProps = DialogContentPrimitiveProps & {
 };
 
 export const DialogContent = React.forwardRef<
-  React.ElementRef<typeof StyledDialogContent>,
+  React.ComponentRef<typeof StyledDialogContent>,
   DialogContentProps
 >(({ children, animation = "scale", ...props }, forwardedRef) => (
   <DialogPrimitive.Portal>

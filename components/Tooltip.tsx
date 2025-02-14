@@ -30,7 +30,7 @@ const StyledContent = styled(TooltipPrimitive.Content, {
 });
 
 export const Tooltip = React.forwardRef<
-  React.ElementRef<typeof StyledContent>,
+  React.ComponentRef<typeof StyledContent>,
   TooltipProps
 >(({
   children,

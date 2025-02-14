@@ -50,7 +50,7 @@ const StyledCaretSortIcon = styled(CaretSortIcon, {
 type SelectProps = React.ComponentProps<typeof StyledSelect> & { css?: CSS };
 
 const SelectBase = React.forwardRef<
-  React.ElementRef<typeof StyledSelect>,
+  React.ComponentRef<typeof StyledSelect>,
   SelectProps
 >(({ css, ...props }, forwardedRef) => (
   <SelectWrapper css={css}>

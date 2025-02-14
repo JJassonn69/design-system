@@ -4,13 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
+.yarn/cache/
 
 # testing
 /coverage
 
 # next.js
 /.next/
-/.yarn/*
 /out/
 
 # production

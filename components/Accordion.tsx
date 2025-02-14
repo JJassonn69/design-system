@@ -15,7 +15,7 @@ type AccordionPrimitiveProps = React.ComponentProps<
 type AccordionProps = AccordionPrimitiveProps & { css?: CSS };
 
 export const Accordion = React.forwardRef<
-  React.ElementRef<typeof StyledAccordion>,
+  React.ComponentRef<typeof StyledAccordion>,
   AccordionProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledAccordion
@@ -102,7 +102,7 @@ type AccordionTriggerPrimitiveProps = React.ComponentProps<
 type AccordionTriggerProps = AccordionTriggerPrimitiveProps & { css?: CSS };
 
 export const AccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof StyledTrigger>,
+  React.ComponentRef<typeof StyledTrigger>,
   AccordionTriggerProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledHeader>

@@ -19,7 +19,7 @@ type VerifiedBadgeProps = React.ComponentProps<typeof StyledVerifiedBadge> & {
 };
 
 export const VerifiedBadge = React.forwardRef<
-  React.ElementRef<typeof StyledVerifiedBadge>,
+  React.ComponentRef<typeof StyledVerifiedBadge>,
   VerifiedBadgeProps
 >((props, forwardedRef) => (
   <StyledVerifiedBadge {...props} ref={forwardedRef}>

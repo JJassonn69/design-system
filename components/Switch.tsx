@@ -83,7 +83,7 @@ type SwitchPrimitiveProps = React.ComponentProps<typeof SwitchPrimitive.Root>;
 type SwitchProps = SwitchPrimitiveProps & SwitchVariants & { css?: CSS };
 
 const SwitchBase = React.forwardRef<
-  React.ElementRef<typeof StyledSwitch>,
+  React.ComponentRef<typeof StyledSwitch>,
   SwitchProps
 >((props, forwardedRef) => (
   <StyledSwitch {...props} ref={forwardedRef}>

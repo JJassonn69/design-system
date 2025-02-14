@@ -67,7 +67,7 @@ type MenuRadioItemPrimitiveProps = React.ComponentProps<
 type MenuRadioItemProps = MenuRadioItemPrimitiveProps & { css?: CSS };
 
 export const MenuRadioItem = React.forwardRef<
-  React.ElementRef<typeof StyledMenuRadioItem>,
+  React.ComponentRef<typeof StyledMenuRadioItem>,
   MenuRadioItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledMenuRadioItem {...props} ref={forwardedRef}>
@@ -106,7 +106,7 @@ type MenuCheckboxItemPrimitiveProps = React.ComponentProps<
 type MenuCheckboxItemProps = MenuCheckboxItemPrimitiveProps & { css?: CSS };
 
 export const MenuCheckboxItem = React.forwardRef<
-  React.ElementRef<typeof StyledMenuCheckboxItem>,
+  React.ComponentRef<typeof StyledMenuCheckboxItem>,
   MenuCheckboxItemProps
 >(({ children, ...props }, forwardedRef) => (
   <StyledMenuCheckboxItem {...props} ref={forwardedRef}>
