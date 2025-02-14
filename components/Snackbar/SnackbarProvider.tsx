@@ -32,7 +32,7 @@ interface IContextProps {
 export const SnackbarContext = createContext({} as IContextProps);
 
 type Props = {
-  children: JSX.Element;
+  children: React.JSX.Element;
 };
 
 export const SnackbarProvider = ({ children }: Props) => {
